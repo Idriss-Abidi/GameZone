@@ -1,1 +1,1 @@
-(Click here to view the website)[https://game-zone-eitc.vercel.app]
+[Click here to view the website](https://game-zone-eitc.vercel.app)
