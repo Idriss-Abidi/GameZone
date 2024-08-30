@@ -9,9 +9,9 @@ const words = [
   ['G', 'L'],
   ['2', 'S', 'C', 'L'],
 ];
-
+const randomShift = Math.floor(Math.random() * 3) + 2;
 const caesarShift = (letter) => {
-  const randomShift = Math.floor(Math.random() * 3) + 2;
+  
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const index = alphabet.indexOf(letter.toUpperCase());
   if (index === -1) return letter; // If the letter is not in the alphabet, return it unchanged.
