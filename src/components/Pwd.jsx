@@ -36,7 +36,10 @@ const Pwd = () => {
       <p className="text-center text-xl mb-2">
         <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong> After Finding The 3 Hints You Need to Search The Winning Password!
       </p> 
-
+      <p className="text-center text-xl mb-2">
+        <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'> Bonus Hint: </strong> 3 numbers and 1 letter.
+      </p> 
+      
       <div className="space-y-8 p-4 justify-self-center">
         <div className="flex space-x-4 justify-center">
           {inputs.map((value, index) => (
