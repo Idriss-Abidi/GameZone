@@ -67,7 +67,7 @@ const Cryptage = () => {
 </h2>
 
       <p className="text-center text-xl mb-2">
-        <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong> Find the correct shift number to decrypt the message.
+        <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong> Find the correct shift number to decrypt the words.
       </p>  
       <p className="text-center text-2xl mb-8">
         <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Hint: </strong> ENSIAS
