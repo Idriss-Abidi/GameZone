@@ -212,12 +212,11 @@ const CardGrid = () => {
       >
         <p className="text-lg mb-4"> <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong>You need to find the correct 7 words in 60 seconds based on the hints that we will give you!
         So take your time to read the words before starting the game.</p>
-        <button
-          className={`bg-blue-500 text-white px-6 py-3 rounded-lg ${gameStarted || tries <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
-          onClick={handleStartClick}
-        >
-          Start
-        </button>
+        <div className='items-center text-center my-[10px]'>
+        <button  className={` ${gameStarted || tries <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`} onClick={handleStartClick}>
+        <span class=" button_top"> Start </span>
+      </button>
+      </div>
       </div>
 
       {/* Cards */}

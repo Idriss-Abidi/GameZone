@@ -111,12 +111,11 @@ const Cryptage = () => {
       </div>
 
       {/* Submit Button */}
-      <button
-        onClick={handleSubmit}
-        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded w-24 justify-self-center"
-      >
-        Submit
+      <div className='items-center text-center my-[10px]'>
+        <button className="hover:bg-blue-600" onClick={handleSubmit}>
+        <span class=" button_top"> Submit </span>
       </button>
+      </div>
 
       {/* Alert */}
       {showAlert && (

@@ -56,12 +56,13 @@ const Pwd = () => {
       </div>
 
       {/* Submit Button */}
-      <button
-        onClick={handleSubmit}
-        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded w-24 justify-self-center"
-      >
-        Submit
+      <div  className='items-center text-center my-[10px]'>
+      <button type="button" class="buttonw"  onClick={handleSubmit}>
+      <div class="buttonw-top">Submit</div>
+      <div class="buttonw-bottom"></div>
+      <div class="buttonw-base"></div>
       </button>
+      </div>
 
       {/* Alert */}
       {showAlert && (
