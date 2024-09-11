@@ -42,8 +42,8 @@ const cardVariants = {
 const Card = ({ front, back, isFlipped, onClick, isDisabled }) => {
   return (
     <motion.div
-      className="relative w-64 h-40 cursor-pointer"
-      style={{ perspective: 1000 }}
+      className="relative cursor-pointer"
+      style={{ perspective: 1000, width: '95%', height: '30vh', margin: 'auto' }} // Dynamic resizing
       onClick={isDisabled ? null : onClick}
     >
       <motion.div
@@ -56,18 +56,19 @@ const Card = ({ front, back, isFlipped, onClick, isDisabled }) => {
       >
         <motion.img
           src={front}
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full object-contain"
           style={{ backfaceVisibility: 'hidden' }}
         />
         <motion.img
           src={back}
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full object-contain"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         />
       </motion.div>
     </motion.div>
   );
 };
+
 
 const CardGrid = () => {
   const [flippedCards, setFlippedCards] = useState({});
@@ -212,26 +213,31 @@ const CardGrid = () => {
       >
         <p className="text-lg mb-4"> <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong>You need to find the correct 7 words in 60 seconds based on the hints that we will give you!
         So take your time to read the words before starting the game.</p>
-        <div className='items-center text-center my-[10px]'>
-        <button  className={` ${gameStarted || tries <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`} onClick={handleStartClick}>
-        <span class=" button_top"> Start </span>
-      </button>
-      </div>
+        <button
+          className={`bg-blue-500 text-white px-6 py-3 rounded-lg ${gameStarted || tries <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
+          onClick={handleStartClick}
+        >
+          Start
+        </button>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-4 gap-4">
-        {images.map((img, index) => (
-          <Card
-            key={index}
-            front={img.front}
-            back={img.back}
-            isFlipped={flippedCards[index]}
-            onClick={() => handleCardClick(index)}
-            isDisabled={disabledCards.has(index)}
-          />
-        ))}
-      </div>
+      {/* Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-wrap w-full">
+  {images.map((img, index) => (
+    <Card
+      className="mx-auto"
+      key={index}
+      front={img.front}
+      back={img.back}
+      isFlipped={flippedCards[index]}
+      onClick={() => handleCardClick(index)}
+      isDisabled={disabledCards.has(index)}
+    />
+  ))}
+</div>
+
+
 
       {/* Game Over Message */}
       {gameOver && (
