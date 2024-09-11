@@ -155,7 +155,7 @@ const CardGrid = () => {
   };
 
   return (
-    <div id="EVENTS" className="p-4 mt-20 relative grid justify-items-stretch">
+    <div id="EVENTS" className="p-4 mt-20 relative grid justify-center">
       {/* Timer and Hints (conditionally rendered) */}
       {gameStarted && !gameOver && (
         <>
