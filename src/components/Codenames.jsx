@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import correct from "../assets/test/correct.png";
-import wrong from "../assets/test/wrong.png";
-import blackCard from "../assets/test/blackCard.png";
+import correct from "../assets/codenames/correct.png";
+import wrong from "../assets/codenames/wrong.png";
+import blackCard from "../assets/codenames/blackCard.png";
 
 // Sample images data
 const images = [
   { front: 'Coding.png', back: 'correct.png' },
-  { front: 'games.png', back: 'correct.png' },
+  { front: 'games.png', back: 'wrong.png' },
   { front: 'web.png', back: 'wrong.png' },
-  { front: 'Coding.png', back: 'blackCard.png' },
-  { front: 'Coding.png', back: 'correct.png' },
-  { front: 'games.png', back: 'correct.png' },
-  { front: 'web.png', back: 'wrong.png' },
-  { front: 'Coding.png', back: 'blackCard.png' },
-  { front: 'Coding.png', back: 'correct.png' },
-  { front: 'games.png', back: 'correct.png' },
-  { front: 'web.png', back: 'wrong.png' },
-  { front: 'Coding.png', back: 'blackCard.png' },
-  { front: 'Coding.png', back: 'correct.png' },
-  { front: 'games.png', back: 'correct.png' },
-  { front: 'web.png', back: 'wrong.png' },
-  { front: 'Coding.png', back: 'blackCard.png' },
-  { front: 'Coding.png', back: 'correct.png' },
-  { front: 'games.png', back: 'correct.png' },
-  { front: 'web.png', back: 'wrong.png' },
-  { front: 'Coding.png', back: 'blackCard.png' },
+  { front: 'ALGO.png', back: 'wrong.png' },
+  { front: '2IA.png', back: 'correct.png' },
+  { front: 'ROBOTICS.png', back: 'wrong.png' },
+  { front: 'CP.png', back: 'correct.png' },
+  { front: 'D2S.png', back: 'correct.png' },
+  { front: 'DATA.png', back: 'wrong.png' },
+  { front: 'DEV.png', back: 'correct.png' },
+  { front: 'SQL.png', back: 'wrong.png' },
+  { front: 'ENSIAS.png', back: 'wrong.png' },
+  { front: 'SSI.png', back: 'wrong.png' },
+  { front: 'HTML.png', back: 'blackCard.png' },
+  { front: 'IA.png', back: 'blackCard.png' },
+  { front: 'Coding.png', back: 'wrong.png' },
+  { front: 'IDSIT.png', back: 'blackCard.png' },
+  { front: 'JAVA.png', back: 'correct.png' },
+  { front: 'LINUX.png', back: 'wrong.png' },
+  { front: 'PYTHON.png', back: 'correct.png' },
 ];
 
 const descriptions = {
@@ -155,7 +155,7 @@ const CardGrid = () => {
   };
 
   return (
-    <div id="EVENTS" className="p-4 mt-20 relative grid justify-center">
+    <div id="EVENTS" className="p-4 mt-20 relative grid justify-items-stretch">
       {/* Timer and Hints (conditionally rendered) */}
       {gameStarted && !gameOver && (
         <>
