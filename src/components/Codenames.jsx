@@ -21,7 +21,7 @@ const images = [
   { front: 'SSI.png', back: 'wrong.png' },
   { front: 'HTML.png', back: 'blackCard.png' },
   { front: 'IA.png', back: 'blackCard.png' },
-  { front: 'Coding.png', back: 'wrong.png' },
+  { front: 'WINDOWS.png', back: 'wrong.png' },
   { front: 'IDSIT.png', back: 'blackCard.png' },
   { front: 'JAVA.png', back: 'correct.png' },
   { front: 'LINUX.png', back: 'wrong.png' },
