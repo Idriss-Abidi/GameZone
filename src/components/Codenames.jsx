@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import correct from "correct.png";
-import wrong from "wrong.png";
-import blackCard from "blackCard.png";
+import correct from "../assets/codenames/correct.png";
+import wrong from "../assets/codenames/wrong.png";
+import blackCard from "../assets/codenames/blackCard.png";
 
 // Sample images data
 const images = [
