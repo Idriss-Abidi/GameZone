@@ -1,12 +1,3 @@
-// import React from 'react'
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import About from "./components/About"
-import Technologies from "./components/Technologies"
-import Experience from "./components/Experience"
-import Project from "./components/Project"
-import Contact from "./components/Contact"
-// import Codenames from "./components/Codenames"
 import Codenames from "./components/Codenames"
 import Cryptage from "./components/Cryptage"
 import Pwd from "./components/Pwd"
@@ -23,18 +14,9 @@ const App = () => {
      <Mirror/>
      <Codenames />
      <Pwd/>
-     {/* <Navbar />
-     <Hero/>
-     <About />
-     <Technologies/>
-     <Experience/>
-     <Project/>
-     <Contact/> */}
      </div>
-
     </div>
   )
 }
 
 export default App
-// render(<App />, document.getElementById("root"));
