@@ -6,7 +6,7 @@ import blackCard from "../assets/codenames/blackCard.png";
 
 // Sample images data
 const images = [
-  { front: 'Coding.png', back: 'correct.png' },
+  { front: 'TRAINING.png', back: 'correct.png' },
   { front: 'games.png', back: 'wrong.png' },
   { front: 'web.png', back: 'wrong.png' },
   { front: 'ALGO.png', back: 'wrong.png' },
@@ -15,13 +15,13 @@ const images = [
   { front: 'CP.png', back: 'correct.png' },
   { front: 'D2S.png', back: 'correct.png' },
   { front: 'DATA.png', back: 'wrong.png' },
-  { front: 'DEV.png', back: 'correct.png' },
+  { front: 'GAMEDEV.png', back: 'correct.png' },
   { front: 'SQL.png', back: 'wrong.png' },
   { front: 'ENSIAS.png', back: 'wrong.png' },
   { front: 'SSI.png', back: 'wrong.png' },
   { front: 'HTML.png', back: 'blackCard.png' },
   { front: 'IA.png', back: 'blackCard.png' },
-  { front: 'WINDOWS.png', back: 'wrong.png' },
+  { front: 'Coding.png', back: 'wrong.png' },
   { front: 'IDSIT.png', back: 'blackCard.png' },
   { front: 'JAVA.png', back: 'correct.png' },
   { front: 'LINUX.png', back: 'wrong.png' },
