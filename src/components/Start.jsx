@@ -9,7 +9,7 @@ const Start = () => {
     navigate('/games'); // Navigate to the /games route
   };
   return (
-    <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ y: -100, opacity: 0 }} transition={{ duration: 1.5 }} className='grid justify-items-stretch '>
+    <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ y: -100, opacity: 0 }} transition={{ duration: 1.5 }} className='py-[20px] my-[20px] grid justify-items-stretch '>
       <div className="boxs">
   <button className="buttons" onClick={handleButtonClick}>PLAY</button>
   <div class="space">
