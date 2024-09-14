@@ -57,7 +57,7 @@ const Play = () => {
           variants={textVariants}
           initial="initial"
           animate="animate"
-          className="text-neon uppercase bg-gradient-to-r from-red-900 via-slate-500 to-blue-900 bg-clip-text text-1xl tracking-tight text-transparent mb-4"
+          className="text-neon uppercase bg-gradient-to-r from-red-900 via-slate-500 to-blue-900 bg-clip-text text-xs	md:text-base lg:text-1xl tracking-tight text-transparent mb-4"
           
         >
            Play the 3 games <br/>
