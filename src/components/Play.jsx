@@ -61,8 +61,8 @@ const Play = () => {
           
         >
            Play the 3 games <br/>
-          get the 3 hints <br/>
-          guess the missing word <br/>& claim your reward !
+          get the points <br/>
+          & claim your reward !
         </motion.h5>
         <motion.div
           variants={starVariants}
