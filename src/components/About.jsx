@@ -28,7 +28,7 @@ const About = () => {
         </div>
       </motion.div>
       <motion.div whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{duration:0.5}} className="w-full lg:w-1/2 lg:p-8 py-[30px]">
-      <h4 className="flex items-center justify-center pb-[17px]">Manage your time; You only have 5 minutes!</h4>
+      <h4 className="flex items-center justify-center pb-[17px]">Manage your time</h4>
         <div className="flex items-center justify-center">
         <img className="rounded-2xl shadow-lg shadow-indigo-500/90" src={time} alt="about" />
         </div>
