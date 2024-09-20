@@ -70,24 +70,22 @@ const Card = ({ front, back, isFlipped, onClick, isDisabled }) => {
 };
 
 
-const CardGrid = () => {
+const CardGrid = ({ addPoints, onSubmit }) => {
   const [flippedCards, setFlippedCards] = useState({});
   const [time, setTime] = useState(60);
   const [intervalId, setIntervalId] = useState(null);
-  const [answers, setAnswers] = useState(7);
+  const [answers, setAnswers] = useState(5);
   const [gameOver, setGameOver] = useState(false);
   const [success, setSuccess] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [disabledCards, setDisabledCards] = useState(new Set());
   const [tries, setTries] = useState(1); // State to manage tries
-
   useEffect(() => {
     if (time <= 0) {
       setTime(0);
-      setGameOver(true);
-      clearInterval(intervalId);
+      handleEndGame(); // End game when time runs out
     }
-  }, [time, intervalId]);
+  }, [time]);
 
   useEffect(() => {
     if (gameOver) return;
@@ -100,30 +98,28 @@ const CardGrid = () => {
 
       return () => clearInterval(id);
     }
-  }, [gameStarted, gameOver]);
+  }, [gameStarted]);
 
   const handleCardClick = (index) => {
     if (!gameStarted || gameOver || disabledCards.has(index)) return;
 
     const cardBack = images[index].back;
     if (cardBack === 'blackCard.png') {
-      setTime(0);
-      setGameOver(true);
-      clearInterval(intervalId);
+      handleEndGame();
     } else if (cardBack === 'wrong.png') {
       setTime(prevTime => Math.max(prevTime - 5, 0));
       if (time <= 0) {
-        setGameOver(true);
-        clearInterval(intervalId);
+        handleEndGame();
       }
     } else if (cardBack === 'correct.png') {
       setAnswers(prevAnswers => {
         const newAnswers = prevAnswers - 1;
         if (newAnswers <= 0) {
           setSuccess(true);
-          setGameOver(true);
-          clearInterval(intervalId);
-        }
+          // if (!gameOver) {  // Ensure end game logic is triggered only once
+          handleEndGame(1); // Optional: This could be your win condition
+          // }
+               }
         return newAnswers;
       });
     }
@@ -137,9 +133,8 @@ const CardGrid = () => {
 
   const handleStartClick = () => {
     if (gameStarted || tries <= 0) return; // Prevent starting if game already started or tries are exhausted
-    // Reset game state and start the timer
     setTime(60);
-    setAnswers(7);
+    setAnswers(5);
     setGameOver(false);
     setSuccess(false);
     setGameStarted(true);
@@ -147,11 +142,27 @@ const CardGrid = () => {
     setTries(prevTries => prevTries - 1); // Decrement tries
   };
 
+  const handleEndGame = (points = 0) => {
+    if (gameOver) return; // Prevent multiple calls
+
+    const correctCards = Object.keys(flippedCards).filter(index => images[index].back === 'correct.png').length;
+    console.log(correctCards+points);
+    addPoints(correctCards+points); // Add points from correct cards and potential extra points
+    onSubmit();
+    setGameOver(true);
+    setGameStarted(false);
+    clearInterval(intervalId);
+  };
+
+  const handleStopClick = () => {
+    handleEndGame();
+  };
+
   const handleClose = () => {
     setGameStarted(false);
     setGameOver(false);
     setSuccess(false);
-    setDisabledCards(new Set()); // Reset disabled cards for a new game
+    setDisabledCards(new Set());
   };
 
   return (
@@ -164,7 +175,7 @@ const CardGrid = () => {
           </div>
 
           <div className="fixed top-4 right-4 p-2 rounded shadow-lg z-50">
-            <p className="text-lg font-semibold">{`Found: ${7-answers} / 7`}</p>
+            <p className="text-lg font-semibold">{`Found: ${5-answers} / 5`}</p>
           </div>
         </>
       )}
@@ -211,9 +222,9 @@ const CardGrid = () => {
       <div
         className="text-center mb-8"
       >
-        <p className="text-lg mb-4"> <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong>You need to find the correct 7 words in 60 seconds based on the hints that we will give you!
+        <p className="text-lg mb-4"> <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong>You need to find the correct 5 of 7 words in 60 seconds based on the hints that we will give you!
         So take your time to read the words before starting the game.</p>
-         <button
+        <button
           className={`hover:bg-blue-600  ${gameStarted || tries <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
           onClick={handleStartClick}
         >
@@ -236,9 +247,16 @@ const CardGrid = () => {
     />
   ))}
 </div>
-
-
-
+{/* Start/Stop Buttons */}
+<div className="flex justify-center mt-8">
+<button
+          className={`hover:bg-blue-600`}
+          onClick={handleStopClick}
+          disabled={!gameStarted}
+        >
+          <span class=" button_top"> Stop </span>
+        </button>
+      </div>
       {/* Game Over Message */}
       {gameOver && (
         <motion.div
