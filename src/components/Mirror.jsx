@@ -95,7 +95,7 @@ const Mirror = ({ addPoints, onSubmit }) => {
               {success ? 'Congrats, You solved it!' : 'Keep Trying!'}
             </h2>
             <p className="text-lg mb-4">
-              {success ? 'The hint is "Detective"' : 'Better luck next time!'}
+              {success ? '' : 'Better luck next time!'}
             </p>
             <button
               className="bg-white text-black py-2 px-4 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300"
