@@ -39,7 +39,7 @@ const Mirror = ({ addPoints, onSubmit }) => {
       </h2>
 
       <p className="text-center text-xl mb-2">
-        <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong> You need to understand this message so you can find the missing word and get the second hint.
+        <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong> You need to find a way to read and understand this message in order to find the password.
       </p>
       <p className="text-center text-2xl mb-8">
         <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Hint: </strong> Mirror
