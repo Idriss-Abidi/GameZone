@@ -222,7 +222,7 @@ const CardGrid = ({ addPoints, onSubmit }) => {
       <div
         className="text-center mb-8"
       >
-        <p className="text-lg mb-4"> <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong>You need to find the correct 5 of 7 words in 60 seconds based on the hints that we will give you!
+        <p className="text-lg mb-4"> <strong className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent'>Objective: </strong>You need to find the correct 5 (of 7) cards in 60 seconds based on the hints that we will give you!
         So take your time to read the words before starting the game.</p>
         <button
           className={`hover:bg-blue-600  ${gameStarted || tries <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
