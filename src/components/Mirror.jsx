@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import msg from "../assets/test/msg.png"
+import msg from "../assets/test/msg1.png"
 
 const Mirror = ({ addPoints, onSubmit }) => {
   const [inputs, setInputs] = useState(['', '', '', '']); // Initialize state for inputs
