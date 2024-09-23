@@ -77,7 +77,7 @@ const Cryptage = ({ addPoints, onSubmit }) => {
                 </div>
               ))}
             </div>
-            <HiArrowCircleRight className="text-xl w-8 h-8 md:w-10 md:h-10 text-gray-600 my-[10px] " />
+            <HiArrowCircleRight className="text-xl w-8 h-8 md:w-10 md:h-10 text-gray-600 my-[20px] " />
             <div className="flex items-center space-x-2">
               {word.map((letter, index) => (
                 <input
