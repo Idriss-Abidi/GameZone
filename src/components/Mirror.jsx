@@ -64,9 +64,19 @@ const Mirror = ({ addPoints, onSubmit }) => {
               maxLength="1"
               className="border-2 border-gray-400 text-gray-800 text-center text-1xl font-bold w-8 h-8"
               value={value}
-              onChange={(e) => handleInputChange(index, e.target.value)}
-            />
-          ))}
+            //  onChange={(e) => handleInputChange(index, e.target.value)}
+            // />
+          // ))}
+              onChange={(e) => {
+            handleInputChange(index, e.target.value);
+            if (e.target.value.length === 1 && index < inputs.length - 1) {
+              // Move focus to the next input
+              document.getElementsByName(`input-${index + 1}`)[0]?.focus();
+            }
+          }}
+          name={`input-${index}`} // Add a name to identify the input
+        />
+      ))}
         </div>
       </div>
 
