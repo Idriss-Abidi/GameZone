@@ -86,7 +86,17 @@ const Cryptage = ({ addPoints, onSubmit }) => {
                   maxLength="1"
                   className="border-2 border-gray-400 text-gray-800 text-center text-1xl font-bold w-8 h-8"
                   value={inputs[wordIndex][index]}
-                  onChange={(e) => handleInputChange(wordIndex, index, e.target.value)}
+{/*                   onChange={(e) => handleInputChange(wordIndex, index, e.target.value)}
+                />
+              ))} */}
+                   onChange={(e) => {
+                    handleInputChange(wordIndex, index, e.target.value);
+                    if (e.target.value.length === 1 && index < word.length - 1) {
+                      // Move focus to the next input
+                      document.getElementsByName(`input-${wordIndex}-${index + 1}`)[0]?.focus();
+                    }
+                  }}
+                  name={`input-${wordIndex}-${index}`} // Add a name to identify the input
                 />
               ))}
             </div>
